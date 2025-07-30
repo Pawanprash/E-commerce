@@ -75,4 +75,19 @@ app.get("/products/:id/edit",(req,res)=>{
     res.render("edit",{product});
   }
 getProduct(query);
+});
+
+
+app.put("/products/:id",(req,res)=>{
+  const query=req.params.id;
+  async function updateProduct(query) {
+    const name=await Product.findByIdAndUpdate(query,{productName: req.body.productName})
+    const price=await Product.findByIdAndUpdate(query,{productPrice: req.body.productPrice})
+    const rating=await Product.findByIdAndUpdate(query,{productRating: req.body.productRating})
+    const review=await Product.findByIdAndUpdate(query,{productReview: req.body.productReview});
+    res.redirect("/products/"+query);
+  }
+
+  updateProduct(query);
+  
 })

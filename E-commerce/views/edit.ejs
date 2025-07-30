@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1>Edit Product Details</h1>
-        <form action="" >
+        <form action="/products/<%=product._id%>?_method=PUT" method="post">
             <input type="text" name="productName" id="" value="<%=product.productName%>">
             <input type="number" name="productPrice" id="" value="<%=product.productPrice%>">
             <input type="text" name="productRating" id="" value="<%=product.productRating%>">

@@ -15,7 +15,9 @@
         <%=product.productRating%> <br>
         <%=product.productReview%> <br>
         
-        <a href="/products/<%=product._id%>/edit">Edit</a>
+        <form action="/products/<%=product._id%>/edit">
+            <button>EDIT</button>
+        </form>
     </div>
 </body>
 </html>
