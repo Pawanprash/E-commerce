@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/new-product.css">
 </head>
 <body>
-    <form action="/products" method="post">
-        <input type="text" placeholder="PRODUCT NAME" name="productName"><br>
-        <input type="number" placeholder="PRICE OF PRODUCT" name="productPrice"><br>
-        <input type="number" placeholder="RATING" name="productRating"><br>
-        <input type="text" placeholder="REVIEW" name="productReview"><br>
-        <button>Submit</button>
-
-    </form>
+    <div class="container">
+        <h1>Enter Product Details</h1>
+        <form action="/products" method="post">
+            <input type="text" placeholder="PRODUCT NAME" name="productName"><br>
+            <input type="number" placeholder="PRICE OF PRODUCT" name="productPrice"><br>
+            <input type="number" placeholder="RATING" name="productRating"><br>
+            <input type="text" placeholder="REVIEW" name="productReview"><br>
+            <button>Submit</button>
+            
+        </form>
+    </div>
 </body>
 </html>

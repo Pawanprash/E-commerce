@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px rebeccapurple;
+    padding: 10px;
+    height: 400px;
+    width: 400px;
+    margin: 20px auto;
+
+    text-align: center;
+}
+
+a{  
+    
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(12, 36, 44);
+    color: aliceblue;
+}

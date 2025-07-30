@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/product-detail.css">
 </head>
 <body>
-    <h1>PRODUCT DETAILS</h1>
-    <%=product.productName%> <br>
-    <%=product.productPrice%> <br>
-    <%=product.productRating%> <br>
-    <%=product.productReview%> <br>
-    
-    <a href="/products/product/<%=product._id%>/edit">edit</a>
+    <div class="container">
+
+        <h1>PRODUCT DETAILS</h1>
+        <%=product.productName%> <br>
+        <%=product.productPrice%> <br>
+        <%=product.productRating%> <br>
+        <%=product.productReview%> <br>
+        
+        <a href="/products/<%=product._id%>/edit">Edit</a>
+    </div>
 </body>
 </html>

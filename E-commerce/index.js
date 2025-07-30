@@ -68,7 +68,7 @@ getProduct(query);
 })
 
 //update product details
-app.get("/products/product/:id/edit",(req,res)=>{
+app.get("/products/:id/edit",(req,res)=>{
   const query=req.params.id;
   async function getProduct(query) {
     const product=await Product.findById(query);
