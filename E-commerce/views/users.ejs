@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    
+    <div class="grid gap-5 h-screen w-full grid-cols-5">
+      <%for(let user of users){%>
+      <div class="border-2 border-black m-1 card">
+        <a href="/users/<%=user._id%>"> <%=user.userName%> </a>
+        <p><%=user.email%></p>
+        <p><%=user.gender%></p>
+      </div>
+      <%}%>
+    </div>
+</body>
+</html>

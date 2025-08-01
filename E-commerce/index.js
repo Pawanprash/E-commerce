@@ -1,4 +1,5 @@
 const Product=require('./models/products');
+const Users=require('./models/users');
 const express= require('express');
 const app= express();
 const mongoose=require('mongoose');
@@ -77,7 +78,7 @@ app.get("/products/:id/edit",(req,res)=>{
 getProduct(query);
 });
 
-
+//update product put request
 app.put("/products/:id",(req,res)=>{
   const query=req.params.id;
   async function updateProduct(query) {
@@ -87,7 +88,50 @@ app.put("/products/:id",(req,res)=>{
     const review=await Product.findByIdAndUpdate(query,{productReview: req.body.productReview});
     res.redirect("/products/"+query);
   }
-
   updateProduct(query);
-  
 })
+
+// Delete product
+app.delete("/products/:id",(req,res)=>{
+  const id=req.params.id;
+  async function deleteProduct(id) {
+    const dlt = await Product.findByIdAndDelete(id);
+    res.redirect("/products");
+
+  }
+  deleteProduct(id);
+})
+
+// ------------------------------------------------------------------------------
+
+//create user DB
+
+
+
+
+// get list of all users
+app.get("/users",(req,res)=>{
+  async function getUsers() {
+    const users= await Users.find({});
+    res.render("users",{users});
+  }
+getUsers();
+});
+
+//create new user
+app.get("/users/new",(req,res)=>{
+  res.render("newUser");
+})
+
+//get specific user
+app.get("/users/:id",(req,res)=>{
+ const query=req.params.id;
+ async function getUser(query) {
+  const user= await Users.findById(query);
+  res.render("showUser",{user});
+
+ }
+ getUser(query);
+})
+
+//

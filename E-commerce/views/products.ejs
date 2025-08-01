@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
     <h1>PRODCUTS</h1>
     <div class="grid gap-5 h-screen w-full grid-cols-5">
-    <%for(let product of products){%>
-        <div class="border-2 border-black m-1 card">
-           <a href="/products/<%=product._id%>"><%=product.productName%></a>
-           <p><%=product.productPrice%></p>
-           <p><%=product.productRating%></p>
-           <p><%=product._id%></p>
-        </div>
-    <%}%>
+      <%for(let product of products){%>
+      <div class="border-2 border-black m-1 card">
+        <a href="/products/<%=product._id%>"> <%=product.productName%> </a>
+        <p><%=product.productPrice%></p>
+        <p><%=product.productRating%></p>
+        <p><%=product._id%></p>
+      </div>
+      <%}%>
     </div>
     <form action="/products/new" method="get">
-        <button>ADD PRODUCT</button>
+      <button
+        type="button"
+        class="ml-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+      >
+        Add Product
+      </button>
     </form>
-</body>
+  </body>
 </html>
